@@ -1,68 +1,58 @@
-# 2010.04.11
+# RealCoordinates
 
-require 'Module/override'
+# 20121130, 1204
+# 0.5.0
+
+# Description: Wouldn't you rather use worksheet.a1 than worksheet[0,0]?  
+
+# Changes since 2010.04.11 (0.6): 
+# 1. - #[].  
+# 2. - #[]=.  
+# 3. - require 'Module', since #[] and #[]= are now gone and I don't need to override methods anymore.  
+# 4. ~ column_number(), so that it no longer defaults to being one-based, and no longer optionally can be zero-based, but defaults to being zero-based.  
+# 5. - column_number(), alias_method :one_based_column_number, :column_number, since this is zero-based only now.  
+# 6. - column_number(), alias_method :one_based_numeric_column_number, :column_number, since this is zero-based only now.  
+# 7. - zero_based_column_number(), since column_number is now zero-based.  
+# 8. ~ numeric_coordinates(), so that it no longer defaults to being one-based, and no longer optionally can be zero-based, but defaults to being zero-based.  
+# 9. - numeric_coordinates(), alias_method :one_based_coordinates, :numeric_coordinates, since this is zero-based only now.  
+# 9. - numeric_coordinates(), alias_method :one_based_numeric_coordinates, :numeric_coordinates, since this is zero-based only now.  
+# 10. - zero_based_coordinates(), since numeric_coordinates is now zero-based.  
+# 11. ~ method_missing(), so that it now uses zero_based_coordinates().  
+
+require 'spreadsheet'
 
 module RealCoordinates
   module Spreadsheet
     module Worksheet
-      
-      def [](row, column)
-        row(row - 1)[column - 1]
-      end
-      
-      def []=(row, column, value)
-        row(row - 1)[column - 1] = value
-      end
-      
-      def column_number(column_letters, zero_based = false)
+
+      def column_number(column_letters)
         column_letters = column_letters.upcase
         letters = ('A'..'Z').to_a
         place_value = 26**(column_letters.size)
-        column_number = 0
+        column_number = -1
         column_letters.each_char do |letter|
           column_number += (letters.index(letter) + 1) * (place_value /= 26)
         end
-        if zero_based
-          column_number - 1
-        else
-          column_number
-        end
+        column_number
       end
-      alias_method :one_based_column_number, :column_number
-      alias_method :one_based_numeric_column_number, :column_number
-      
-      def zero_based_column_number(column_letters)
-        column_number(column_letters, true)
-      end
-      
-      def numeric_coordinates(letters_and_numbers_coordinates, zero_based = false)
+
+      def numeric_coordinates(letters_and_numbers_coordinates)
         parts = letters_and_numbers_coordinates.match(/^(\w+?)(\d+?)$/)
-        if zero_based
-          [parts[2].to_i - 1, zero_based_column_number(parts[1])]
-        else
-          [parts[2].to_i, column_number(parts[1])]
-        end
+        [parts[2].to_i - 1, column_number(parts[1])]
       end
-      alias_method :one_based_coordinates, :numeric_coordinates
-      alias_method :one_based_numeric_coordinates, :numeric_coordinates
-      
-      def zero_based_coordinates(letters_and_numbers_coordinates)
-        numeric_coordinates(letters_and_numbers_coordinates, true)
-      end
-      alias_method :zero_based_numeric_coordinates, :zero_based_coordinates
-      
+
       def method_missing(method_name, *args, &block)
         if method_name.to_s =~ /=$/
-          coords = one_based_coordinates(method_name.to_s.sub(/=$/, ''))
+          coords = numeric_coordinates(method_name.to_s.sub(/=$/, ''))
           self.send('[]=', coords[0], coords[1], *args)
         else
-          coords = one_based_coordinates(method_name.to_s)
+          coords = numeric_coordinates(method_name.to_s)
           self.send('[]', coords[0], coords[1])
         end
       end
-      
+
     end
   end
 end
 
-Spreadsheet::Worksheet.send(:override, RealCoordinates::Spreadsheet::Worksheet)
+Spreadsheet::Worksheet.send(:include, RealCoordinates::Spreadsheet::Worksheet)
