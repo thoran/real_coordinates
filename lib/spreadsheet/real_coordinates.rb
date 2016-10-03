@@ -69,7 +69,7 @@ end
 
 Spreadsheet::Worksheet.send(:override, RealCoordinates::Spreadsheet::Worksheet)
 
-workbook = Spreadsheet.open('../../templates/3 - Request for Activations v1 - SPs.xls')
-worksheet = workbook.worksheet(1)
+workbook = Spreadsheet.open('../../templates/4 - Request for Ports v1 - SPs.xls')
+worksheet = workbook.worksheet(0)
 worksheet.a6 = '2010-04-11'
 workbook.write('out.xls')
