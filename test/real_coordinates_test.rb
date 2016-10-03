@@ -398,112 +398,83 @@ class TC_RealCoordinates_Spreadsheet_Worksheet < MiniTest::Unit::TestCase
 
     assert_equal 'A1', @worksheet.real_coordinates(0,0)
     assert_equal 'A1', @worksheet.real_coordinates([0,0])
-
     assert_equal 'B1', @worksheet.real_coordinates(0,1)
     assert_equal 'B1', @worksheet.real_coordinates([0,1])
-
     assert_equal 'C1', @worksheet.real_coordinates(0,2)
     assert_equal 'C1', @worksheet.real_coordinates([0,2])
-
     assert_equal 'Z1', @worksheet.real_coordinates(0,25)
     assert_equal 'Z1', @worksheet.real_coordinates([0,25])
 
     assert_equal 'AA1', @worksheet.real_coordinates(0,26)
     assert_equal 'AA1', @worksheet.real_coordinates([0,26])
-
     assert_equal 'AB1', @worksheet.real_coordinates(0,27)
     assert_equal 'AB1', @worksheet.real_coordinates([0,27])
-
     assert_equal 'AC1', @worksheet.real_coordinates(0,28)
     assert_equal 'AC1', @worksheet.real_coordinates([0,28])
-
     assert_equal 'AZ1', @worksheet.real_coordinates(0,51)
     assert_equal 'AZ1', @worksheet.real_coordinates([0,51])
 
     assert_equal 'BA1', @worksheet.real_coordinates(0,52)
     assert_equal 'BA1', @worksheet.real_coordinates([0,52])
-
     assert_equal 'BB1', @worksheet.real_coordinates(0,53)
     assert_equal 'BB1', @worksheet.real_coordinates([0,53])
-
     assert_equal 'BC1', @worksheet.real_coordinates(0,54)
     assert_equal 'BC1', @worksheet.real_coordinates([0,54])
-
     assert_equal 'BZ1', @worksheet.real_coordinates(0,77)
     assert_equal 'BZ1', @worksheet.real_coordinates([0,77])
 
     assert_equal 'CA1', @worksheet.real_coordinates(0,78)
     assert_equal 'CA1', @worksheet.real_coordinates([0,78])
-
     assert_equal 'CB1', @worksheet.real_coordinates(0,79)
     assert_equal 'CB1', @worksheet.real_coordinates([0,79])
-
     assert_equal 'CC1', @worksheet.real_coordinates(0,80)
     assert_equal 'CC1', @worksheet.real_coordinates([0,80])
-
     assert_equal 'CY1', @worksheet.real_coordinates(0,102)
     assert_equal 'CY1', @worksheet.real_coordinates([0,102])
-
     assert_equal 'CZ1', @worksheet.real_coordinates(0,103)
     assert_equal 'CZ1', @worksheet.real_coordinates([0,103])
 
     assert_equal 'YA1', @worksheet.real_coordinates(0,650)
     assert_equal 'YA1', @worksheet.real_coordinates([0,650])
-
     assert_equal 'YB1', @worksheet.real_coordinates(0,651)
     assert_equal 'YB1', @worksheet.real_coordinates([0,651])
-
     assert_equal 'YC1', @worksheet.real_coordinates(0,652)
     assert_equal 'YC1', @worksheet.real_coordinates([0,652])
-
     assert_equal 'YY1', @worksheet.real_coordinates(0,674)
     assert_equal 'YY1', @worksheet.real_coordinates([0,674])
-
     assert_equal 'YZ1', @worksheet.real_coordinates(0,675)
     assert_equal 'YZ1', @worksheet.real_coordinates([0,675])
 
     assert_equal 'ZA1', @worksheet.real_coordinates(0,676)
     assert_equal 'ZA1', @worksheet.real_coordinates([0,676])
-
     assert_equal 'ZB1', @worksheet.real_coordinates(0,677)
     assert_equal 'ZB1', @worksheet.real_coordinates([0,677])
-
     assert_equal 'ZC1', @worksheet.real_coordinates(0,678)
     assert_equal 'ZC1', @worksheet.real_coordinates([0,678])
-
     assert_equal 'ZY1', @worksheet.real_coordinates(0,700)
     assert_equal 'ZY1', @worksheet.real_coordinates([0,700])
-
     assert_equal 'ZZ1', @worksheet.real_coordinates(0,701)
     assert_equal 'ZZ1', @worksheet.real_coordinates([0,701])
 
     assert_equal 'AAA1', @worksheet.real_coordinates(0,702)
     assert_equal 'AAA1', @worksheet.real_coordinates([0,702])
-
     assert_equal 'AAB1', @worksheet.real_coordinates(0,703)
     assert_equal 'AAB1', @worksheet.real_coordinates([0,703])
-
     assert_equal 'AAC1', @worksheet.real_coordinates(0,704)
     assert_equal 'AAC1', @worksheet.real_coordinates([0,704])
-
     assert_equal 'AAY1', @worksheet.real_coordinates(0,726)
     assert_equal 'AAY1', @worksheet.real_coordinates([0,726])
-
     assert_equal 'AAZ1', @worksheet.real_coordinates(0,727)
     assert_equal 'AAZ1', @worksheet.real_coordinates([0,727])
 
     assert_equal 'ABA1', @worksheet.real_coordinates(0,728)
     assert_equal 'ABA1', @worksheet.real_coordinates([0,728])
-
     assert_equal 'ABB1', @worksheet.real_coordinates(0,729)
     assert_equal 'ABB1', @worksheet.real_coordinates([0,729])
-
     assert_equal 'ABC1', @worksheet.real_coordinates(0,730)
     assert_equal 'ABC1', @worksheet.real_coordinates([0,730])
-
     assert_equal 'ABY1', @worksheet.real_coordinates(0,752)
     assert_equal 'ABY1', @worksheet.real_coordinates([0,752])
-
     assert_equal 'ABZ1', @worksheet.real_coordinates(0,753)
     assert_equal 'ABZ1', @worksheet.real_coordinates([0,753])
 
@@ -511,112 +482,83 @@ class TC_RealCoordinates_Spreadsheet_Worksheet < MiniTest::Unit::TestCase
 
     assert_equal 'A2', @worksheet.real_coordinates(1,0)
     assert_equal 'A2', @worksheet.real_coordinates([1,0])
-
     assert_equal 'B2', @worksheet.real_coordinates(1,1)
     assert_equal 'B2', @worksheet.real_coordinates([1,1])
-
     assert_equal 'C2', @worksheet.real_coordinates(1,2)
     assert_equal 'C2', @worksheet.real_coordinates([1,2])
-
     assert_equal 'Z2', @worksheet.real_coordinates(1,25)
     assert_equal 'Z2', @worksheet.real_coordinates([1,25])
 
     assert_equal 'AA2', @worksheet.real_coordinates(1,26)
     assert_equal 'AA2', @worksheet.real_coordinates([1,26])
-
     assert_equal 'AB2', @worksheet.real_coordinates(1,27)
     assert_equal 'AB2', @worksheet.real_coordinates([1,27])
-
     assert_equal 'AC2', @worksheet.real_coordinates(1,28)
     assert_equal 'AC2', @worksheet.real_coordinates([1,28])
-
     assert_equal 'AZ2', @worksheet.real_coordinates(1,51)
     assert_equal 'AZ2', @worksheet.real_coordinates([1,51])
 
     assert_equal 'BA2', @worksheet.real_coordinates(1,52)
     assert_equal 'BA2', @worksheet.real_coordinates([1,52])
-
     assert_equal 'BB2', @worksheet.real_coordinates(1,53)
     assert_equal 'BB2', @worksheet.real_coordinates([1,53])
-
     assert_equal 'BC2', @worksheet.real_coordinates(1,54)
     assert_equal 'BC2', @worksheet.real_coordinates([1,54])
-
     assert_equal 'BZ2', @worksheet.real_coordinates(1,77)
     assert_equal 'BZ2', @worksheet.real_coordinates([1,77])
 
     assert_equal 'CA2', @worksheet.real_coordinates(1,78)
     assert_equal 'CA2', @worksheet.real_coordinates([1,78])
-
     assert_equal 'CB2', @worksheet.real_coordinates(1,79)
     assert_equal 'CB2', @worksheet.real_coordinates([1,79])
-
     assert_equal 'CC2', @worksheet.real_coordinates(1,80)
     assert_equal 'CC2', @worksheet.real_coordinates([1,80])
-
     assert_equal 'CY2', @worksheet.real_coordinates(1,102)
     assert_equal 'CY2', @worksheet.real_coordinates([1,102])
-
     assert_equal 'CZ2', @worksheet.real_coordinates(1,103)
     assert_equal 'CZ2', @worksheet.real_coordinates([1,103])
 
     assert_equal 'YA2', @worksheet.real_coordinates(1,650)
     assert_equal 'YA2', @worksheet.real_coordinates([1,650])
-
     assert_equal 'YB2', @worksheet.real_coordinates(1,651)
     assert_equal 'YB2', @worksheet.real_coordinates([1,651])
-
     assert_equal 'YC2', @worksheet.real_coordinates(1,652)
     assert_equal 'YC2', @worksheet.real_coordinates([1,652])
-
     assert_equal 'YY2', @worksheet.real_coordinates(1,674)
     assert_equal 'YY2', @worksheet.real_coordinates([1,674])
-
     assert_equal 'YZ2', @worksheet.real_coordinates(1,675)
     assert_equal 'YZ2', @worksheet.real_coordinates([1,675])
 
     assert_equal 'ZA2', @worksheet.real_coordinates(1,676)
     assert_equal 'ZA2', @worksheet.real_coordinates([1,676])
-
     assert_equal 'ZB2', @worksheet.real_coordinates(1,677)
     assert_equal 'ZB2', @worksheet.real_coordinates([1,677])
-
     assert_equal 'ZC2', @worksheet.real_coordinates(1,678)
     assert_equal 'ZC2', @worksheet.real_coordinates([1,678])
-
     assert_equal 'ZY2', @worksheet.real_coordinates(1,700)
     assert_equal 'ZY2', @worksheet.real_coordinates([1,700])
-
     assert_equal 'ZZ2', @worksheet.real_coordinates(1,701)
     assert_equal 'ZZ2', @worksheet.real_coordinates([1,701])
 
     assert_equal 'AAA2', @worksheet.real_coordinates(1,702)
     assert_equal 'AAA2', @worksheet.real_coordinates([1,702])
-
     assert_equal 'AAB2', @worksheet.real_coordinates(1,703)
     assert_equal 'AAB2', @worksheet.real_coordinates([1,703])
-
     assert_equal 'AAC2', @worksheet.real_coordinates(1,704)
     assert_equal 'AAC2', @worksheet.real_coordinates([1,704])
-
     assert_equal 'AAY2', @worksheet.real_coordinates(1,726)
     assert_equal 'AAY2', @worksheet.real_coordinates([1,726])
-
     assert_equal 'AAZ2', @worksheet.real_coordinates(1,727)
     assert_equal 'AAZ2', @worksheet.real_coordinates([1,727])
 
     assert_equal 'ABA2', @worksheet.real_coordinates(1,728)
     assert_equal 'ABA2', @worksheet.real_coordinates([1,728])
-
     assert_equal 'ABB2', @worksheet.real_coordinates(1,729)
     assert_equal 'ABB2', @worksheet.real_coordinates([1,729])
-
     assert_equal 'ABC2', @worksheet.real_coordinates(1,730)
     assert_equal 'ABC2', @worksheet.real_coordinates([1,730])
-
     assert_equal 'ABY2', @worksheet.real_coordinates(1,752)
     assert_equal 'ABY2', @worksheet.real_coordinates([1,752])
-
     assert_equal 'ABZ2', @worksheet.real_coordinates(1,753)
     assert_equal 'ABZ2', @worksheet.real_coordinates([1,753])
 

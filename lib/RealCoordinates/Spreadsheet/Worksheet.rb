@@ -1,8 +1,8 @@
 # RealCoordinates/Spreadsheet/Worksheet.rb
 # RealCoordinates/Spreadsheet/Worksheet
 
-# 20161001, 02, 03
-# 0.7.0
+# 20161003
+# 0.7.1
 
 # Description: Wouldn't you rather use worksheet.a1 than worksheet[0,0]?
 
@@ -13,6 +13,9 @@
 # 4. ~ numeric_coordinates(), so that the parts are labelled.
 # 5. + real_coordinates(), so as this is bidirectional for symmetry at least!
 # 6. Far more extensive testing done.
+# 0/1
+# 7. - letter_places(), since it isn't being used.
+# 8. Tidied the tests a little.
 
 require 'spreadsheet'
 
@@ -29,19 +32,6 @@ module RealCoordinates
           column_number += (letters.index(letter) + 1) * (place_value /= 26)
         end
         column_number
-      end
-
-      def letter_places(column_number)
-        return 1 if column_number.zero?
-        letter_places = 0
-        power_series_sum = 0
-        power = 0
-        until column_number < power_series_sum
-          power += 1
-          power_series_sum += 26**power
-          letter_places += 1
-        end
-        letter_places
       end
 
       def place_values(column_number)
