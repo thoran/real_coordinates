@@ -1,22 +1,6 @@
 # RealCoordinates/Spreadsheet/Worksheet.rb
 # RealCoordinates/Spreadsheet/Worksheet
 
-# 20161003
-# 0.7.1
-
-# Description: Wouldn't you rather use worksheet.a1 than worksheet[0,0]?
-
-# Changes since 0.6:
-# 1. + letter_places(), initially for use with column_letters(), but now I'm not so sure...
-# 2. + place_values(), actually for use with column_letters().
-# 3. ~ column_letters(), so that it actually works now!
-# 4. ~ numeric_coordinates(), so that the parts are labelled.
-# 5. + real_coordinates(), so as this is bidirectional for symmetry at least!
-# 6. Far more extensive testing done.
-# 0/1
-# 7. - letter_places(), since it isn't being used.
-# 8. Tidied the tests a little.
-
 require 'spreadsheet'
 
 module RealCoordinates
@@ -57,7 +41,6 @@ module RealCoordinates
       end
 
       def column_letters(column_number)
-        column_letters = ''
         letters = ('A'..'Z').to_a
         place_values(column_number).collect do |place_value|
           letters[place_value]
