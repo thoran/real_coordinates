@@ -8,6 +8,14 @@ module RealCoordinates
   module Spreadsheet
     module Worksheet
       
+      def [](row, column)
+        row(row - 1)[column - 1]
+      end
+      
+      def []=(row, column, value)
+        row(row - 1)[column - 1] = value
+      end
+      
       def column_number(column_letters, zero_based = false)
         column_letters = column_letters.upcase
         letters = ('A'..'Z').to_a
@@ -47,10 +55,10 @@ module RealCoordinates
       
       def method_missing(method_name, *args, &block)
         if method_name.to_s =~ /=$/
-          coords = zero_based_coordinates(method_name.to_s.sub(/=$/, ''))
+          coords = one_based_coordinates(method_name.to_s.sub(/=$/, ''))
           self.send('[]=', coords[0], coords[1], *args)
         else
-          coords = zero_based_coordinates(method_name.to_s)
+          coords = one_based_coordinates(method_name.to_s)
           self.send('[]', coords[0], coords[1])
         end
       end
@@ -60,8 +68,6 @@ module RealCoordinates
 end
 
 Spreadsheet::Worksheet.send(:override, RealCoordinates::Spreadsheet::Worksheet)
-
-include Spreadsheet
 
 workbook = Spreadsheet.open('../../templates/3 - Request for Activations v1 - SPs.xls')
 worksheet = workbook.worksheet(1)
